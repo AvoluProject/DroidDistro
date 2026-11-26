@@ -34,6 +34,7 @@ class TermuxEventReceiver : BroadcastReceiver() {
             }
             "NOT_INSTALLED" -> editor.putBoolean("installed", false)
             "ERROR" -> editor.putBoolean("installed", false)
+            "TASK_ERROR", "TASK_DONE", "TASK_RUNNING" -> Unit
         }
         editor.apply()
     }
